@@ -1,0 +1,504 @@
+# 第二区：英语日常高频词/短语（英文 <TAB> 中文）。制表符分隔，# 开头为注释。
+#
+# **这一区只服务一件事：没网的时候还能看懂大意。**
+# 走 LLM 那条路时它完全不参与——模型本来就认识 "the"、"and"，把日常词当术语
+# 塞进 prompt 只会稀释真正重要的术语权重。所以别指望它提升正常译文质量，
+# 它的价值在断网/接口挂掉时：有这份短语级对照表，直译出来的东西至少读得懂。
+#
+# 主体是老项目 live-translate 里那 195 条人工整理的英中对照（直播间天天在说的话），
+# 加上一批出现频率最高的功能词。想加自己的词，直接追加即可，重启生效。
+# 一词多义、要看语境才知道意思的词（right / last / work / one …）故意没收。
+#
+# **两条规矩**：
+#   1. 两区不重叠。同一个词在 terms.tsv 里已经有了，这里就别再写——
+#      术语区优先（"clutch" 在那边是"残局"，在这边只能写成含糊的"关键时刻"）。
+#      自检里有一条专门守这个。
+#   2. 大小写不敏感。匹配时统一转小写，所以 "Thanks" 和 "thanks" 是同一个词，
+#      写一种就行。
+#
+# 匹配规则：直译时按"最长优先"扫描——"let me know" 会整条命中，而不是拆成
+# let + me + know。没命中的部分原样留着。
+
+i	我
+me	我
+my	我的
+you	你
+your	你的
+we	我们
+our	我们的
+they	他们
+them	他们
+he	他
+she	她
+it	它
+this	这
+that	那
+these	这些
+those	那些
+here	这里
+there	那儿
+is	是
+are	是
+am	是
+was	是
+were	是
+be	是
+been	了
+do	做
+does	做
+did	做了
+have	有
+has	有
+had	有过
+can	能
+could	能
+will	会
+would	会
+should	应该
+must	必须
+not	不
+no	不
+dont	不
+cant	不能
+wont	不会
+didnt	没有
+isnt	不是
+arent	不是
+im	我是
+youre	你是
+its	它是
+thats	那是
+and	和
+but	但是
+or	或者
+so	所以
+because	因为
+if	如果
+when	当…时
+while	当…时
+than	比
+then	然后
+also	也
+too	也
+very	很
+really	真的
+just	就
+still	还
+even	甚至
+only	只
+again	又
+already	已经
+always	总是
+never	从不
+maybe	也许
+actually	其实
+probably	大概
+almost	几乎
+about	大概
+what	什么
+where	哪里
+who	谁
+why	为什么
+how	怎么
+which	哪个
+now	现在
+today	今天
+tomorrow	明天
+yesterday	昨天
+tonight	今晚
+good	好
+bad	差
+new	新
+old	旧
+up	上
+down	下
+out	出去
+in	在里面
+on	在上面
+at	在
+for	为了
+with	和
+from	从
+to	到
+of	的
+get	得到
+got	得到了
+go	走
+going	要
+gonna	要
+wanna	想
+want	想要
+need	需要
+know	知道
+think	觉得
+see	看到
+look	看
+say	说
+said	说
+tell	告诉
+told	告诉
+give	给
+take	拿
+come	来
+make	做
+let	让
+put	放
+keep	保持
+find	找到
+try	试试
+wait	等等
+help	帮忙
+stop	停
+Hello everyone	大家好
+Hi guys	嗨，各位
+Hey chat	嘿，兄弟们
+Good morning	早上好
+Good evening	晚上好
+Welcome back	欢迎回来
+Welcome to the stream	欢迎来到直播间
+Thanks for watching	感谢观看
+Thank you	谢谢
+Thanks a lot	多谢了
+Thank you so much	太谢谢了
+You're welcome	不客气
+No problem	没问题
+No worries	没事儿
+My bad	我的锅
+Sorry about that	这个是我的问题
+Excuse me	不好意思
+Good job	干得漂亮
+Nice work	漂亮
+Well done	做得好
+Good game	打得好
+GG	GG
+That was close	差点就没了
+Nice try	打得不错了
+Better luck next time	下次加油
+Let's go	走起
+Here we go	来了来了
+Let's do this	那就开干吧
+Let's get started	那咱们开始吧
+Are you ready	准备好了吗
+One more time	再来一次
+Last one	最后一个
+For real	说真的
+Seriously	不是吧
+No way	不可能吧
+Are you kidding me	你在逗我
+What the heck	什么鬼
+What is going on	这啥情况
+What happened	发生什么了
+I don't know	我不知道啊
+I have no idea	我完全没头绪
+I think so	我觉得是
+I guess so	大概吧
+Of course	那当然了
+For sure	肯定的
+Definitely	绝对的
+Absolutely	必须的
+Exactly	就是这样
+That's right	没错
+You're right	你说得对
+I agree	我同意
+Me too	我也是
+Same here	我也一样
+Not really	倒也不是
+Not bad	还行吧
+Pretty good	挺好的
+That's crazy	太离谱了
+That's insane	太猛了
+That's amazing	太厉害了
+That's awesome	太棒了
+That's cool	挺酷的
+That's funny	笑死
+That's hilarious	太好笑了
+This is ridiculous	这太扯了
+Oh my god	我的天
+Holy crap	我去
+Damn	靠
+What a mess	一团乱
+Calm down	冷静点
+Take it easy	别急
+Relax	放轻松
+Chill	淡定
+Don't worry	别担心
+It's fine	没事
+It's okay	可以的
+It's alright	还行
+Never mind	算了
+Whatever	随便吧
+Anyway	反正吧
+By the way	对了
+So yeah	反正就是
+You know what I mean	你懂的
+Right	对吧
+Okay	行
+Alright	好吧
+Yeah	对
+Nope	不是
+Yep	是
+Hmm	嗯
+Wait a second	等一下
+Hold on	等等
+Give me a sec	稍等
+One moment	马上
+Let me check	我看一下
+I'm back	我回来了
+I'm here	我在呢
+Be right back	马上回来
+BRB	马上回
+Going offline	我先下了
+See you later	回头见
+See you tomorrow	明天见
+Good night	晚安
+Bye	拜拜
+Take care	保重
+Have a good one	祝你愉快
+Subscribe	订阅一下
+Hit the like button	点个赞
+Follow me	关注我
+Donate	打赏
+Thanks for the donation	感谢打赏
+Thanks for the sub	感谢订阅
+Thanks for the follow	感谢关注
+Chat	弹幕
+In the chat	弹幕里
+Chat is going crazy	弹幕都疯了
+Chat is wild today	今天弹幕太野了
+Let's see	我看看
+Look at this	看这个
+Check this out	你瞅瞅这个
+Watch this	看好了
+Oh no	糟了
+Oh well	算了
+That sucks	太惨了
+Feels bad	难受
+Feels good	舒服
+I'm dead	笑死我了
+I can't	我不行了
+LMAO	笑死
+LOL	哈哈
+That's what she said	这话说得
+He's so cooked	他完了
+He's done for	他没救了
+We're so back	我们回来了
+It's so over	完了完了
+Skill issue	技术问题
+Get good	练练吧
+Easier said than done	说得倒轻巧
+Piece of cake	小菜一碟
+No big deal	小意思
+It's what it is	就这样吧
+Fair enough	行吧，有道理
+Makes sense	有道理
+I see	原来如此
+Got it	懂了
+Understood	明白
+Copy that	收到
+Let me know	跟我说一声
+Tell me	你说
+Go ahead	你继续
+After you	你先
+One second	一秒
+On my way	这就来
+Almost there	马上到
+Not yet	还没
+Almost done	快好了
+Give it up	放弃吧
+I give up	我放弃
+Keep going	继续
+Don't stop	别停
+Come on	别啊
+Come on man	哥们儿
+You got this	你可以的
+You can do it	你能行的
+Believe me	相信我
+Trust me	信我
+I told you	我就说吧
+I knew it	我就知道
+Told you so	早跟你说了
+What did I say	我说什么来着
+Here we go again	又来了
+Not again	别又来
+Every single time	每次都这样
+Story of my life	我这人生就这样
+Same	一样
+True	确实
+Facts	实话
+Word	说得对
+Bet	行吧
+Let's gooo	冲啊
+Poggers	太牛了
+Nice shot	好枪
+Good shot	打得准
+Missed it	空了
+Almost got it	差点
+So close	就差一点
+One more	再来一个
+Just one more game	就最后一把
+I need to sleep	我该睡了
+Last game I promise	最后一把，我保证
+This is the last one	真的最后一把了
+
+# 动词变位：覆盖率最常见的失分点是词形对不上（表里收了 get，字幕上是 gets，照样算没认出来）。只补最高频的那些，不引入词干还原——那是另一个量级的复杂度和风险。
+gets	得到
+getting	在变
+goes	走
+went	走了
+wants	想要
+needs	需要
+knows	知道
+knew	知道
+thinks	觉得
+thought	以为
+sees	看到
+saw	看到
+looks	看
+looked	看了
+says	说
+tells	告诉
+gives	给
+gave	给
+takes	拿
+took	拿了
+comes	来
+came	来了
+makes	做
+made	做了
+puts	放
+keeps	保持
+finds	找到
+found	找到
+tries	试
+tried	试过
+helps	帮忙
+plays	打
+played	打了
+wins	赢
+won	赢了
+loses	输
+losing	要输
+lost	输了
+dies	死了
+died	死了
+pushes	推进
+holds	守住
+held	守住了
+saves	保住
+saved	保住了
+buys	买
+bought	买了
+drops	掉落
+dropped	掉了
+hits	打中
+misses	打偏
+missed	打偏了
+shoots	开枪
+moves	移动
+moved	动了
+runs	跑
+ran	跑了
+jumps	跳
+falls	掉了
+checks	检查
+watches	看
+happens	发生
+happened	发生了
+works	有用
+matters	要紧
+counts	算数
+
+# 游戏里反复出现的普通词。注意这些是**普通英语词**，不是游戏术语——术语（clutch/eco/awp…）在第一区，两区职责不重叠。
+game	游戏
+team	队伍
+teams	队伍
+round	回合
+rounds	回合
+match	比赛
+map	地图
+maps	地图
+player	选手
+players	选手
+enemy	敌人
+enemies	敌人
+guy	家伙
+guys	各位
+everyone	大家
+someone	有人
+anyone	任何人
+nobody	没人
+something	什么
+anything	任何东西
+nothing	没事
+everything	全都
+death	死亡
+damage	伤害
+score	比分
+point	分数
+level	等级
+wall	墙
+money	钱
+half	半场
+time	时间
+minute	分钟
+second	秒
+moment	一下
+chance	机会
+run	一局
+call	指挥
+shot	一枪
+shots	几枪
+aim	瞄准
+spawn	出生
+reload	换弹
+ammo	弹药
+armor	护甲
+helmet	头盔
+pistol	手枪
+rifle	步枪
+bullet	子弹
+utility	道具
+position	位置
+angle	角度
+support	支援
+flank	绕后
+strategy	战术
+mistake	失误
+mistakes	失误
+error	错误
+problem	问题
+luck	运气
+lucky	走运
+unlucky	倒霉
+
+# 口语里最密的副词和程度词。
+nearly	差点
+enough	够了
+completely	完全
+totally	完全
+honestly	老实说
+basically	基本上
+literally	简直
+obviously	明显
+finally	终于
+suddenly	突然
+quickly	快
+slowly	慢慢
+early	早
+late	晚
+wrong	错的
+better	更好
+worse	更糟
+best	最好
+worst	最糟
+nice	不错
+crazy	离谱
+insane	离谱
+clean	干净利落
+easy	简单
+tough	难缠
+close	接近
+safe	安全
+dangerous	危险
+dead	死了
+versus	对

@@ -1,0 +1,198 @@
+# 第一区：游戏专业术语（术语 <TAB> 中文说明）。制表符分隔，# 开头为注释。
+#
+# 这一区有两个用途：
+#   1. 每句翻译前，命中的词会连说明一起注入 prompt 的 [术语表]，模型被要求照用
+#      —— 这是让 "clutch" 翻成"残局"而不是"抓紧"的主要机制。
+#   2. 没网走离线直译时，整条术语会被优先替换掉（长词优先）。
+#
+# **收录红线（很重要）**：说明会被原样插进 prompt，而系统提示要求"严格照用"，
+# 所以日常英语里也大量出现的词一律不收，哪怕它确实是游戏术语：
+#   big / device / spirit / liquid / heroic / complexity / vitality（都是战队名，
+#   但更是日常词）、he / long / short / window / save / hold / half / series /
+#   default / split / fake / throw / support / force / bonus / scope / execute
+# 这些收了就是灾难——"he is playing well" 会被套成"恐怖分子打得好"。
+# 日常词归第二区（common.tsv），两区职责不重叠。
+# 多词组合（force buy、hold the angle）是安全的，可以收。
+#
+# 想加自己的词，直接追加即可。改动后重启程序生效。
+
+awp	CS 里的狙击枪，保留 "AWP" 不译
+ak-47	CS 里的步枪，保留 "AK"
+ak47	CS 里的步枪（AK），保留不译
+ak	CS 里的步枪，保留 "AK"
+m4a1	CS 里的步枪，保留 "M4"
+m4	CS 里的步枪，保留 "M4"
+deagle	CS 里的手枪，俗称沙鹰
+desert eagle	沙漠之鹰手枪	沙漠之鹰手枪
+glock	格洛克手枪	格洛克手枪
+usp	USP 手枪	USP 手枪
+p250	P250 手枪	P250 手枪
+five-seven	FN57 手枪	FN57 手枪
+tec-9	Tec-9 手枪	Tec-9 手枪
+cz75	CZ75 手枪	CZ75 手枪
+dualies	双持手枪	双持手枪
+ssg08	鸟狙	鸟狙
+scout	鸟狙（SSG08）	鸟狙
+aug	AUG 步枪	AUG 步枪
+sg553	SG553 步枪	SG553 步枪
+galil	加利尔步枪	加利尔步枪
+famas	法玛斯步枪	法玛斯步枪
+mp9	MP9 冲锋枪	MP9 冲锋枪
+mac-10	MAC-10 冲锋枪
+mp7	MP7 冲锋枪	MP7 冲锋枪
+ump	UMP 冲锋枪	UMP 冲锋枪
+p90	P90 冲锋枪	P90 冲锋枪
+bizon	野牛冲锋枪	野牛冲锋枪
+negev	内格夫机枪	内格夫机枪
+m249	M249 机枪	M249 机枪
+nova	新星霰弹枪	新星霰弹枪
+xm1014	XM1014 霰弹枪
+mag-7	MAG-7 霰弹枪
+kevlar	护甲	护甲
+defuse kit	拆弹器	拆弹器
+grenade	手雷	手雷
+flashbang	闪光弹	闪光弹
+flash	闪光弹	闪光弹
+smoke	烟雾弹	烟雾弹
+molotov	燃烧瓶	燃烧瓶
+incendiary	燃烧弹	燃烧弹
+decoy	诱饵弹	诱饵弹
+he grenade	高爆手雷	高爆手雷
+c4	C4 炸弹	C4 炸弹
+silencer	消音器	消音器
+
+eco	经济局（省钱不买装备）	经济局
+eco round	经济局	经济局
+force buy	强起（钱不够也硬买）	强起
+full buy	全装（满配）	全装
+save round	保枪局	保枪局
+bonus round	奖励局	奖励局
+loss bonus	连败补偿	连败补偿
+pistol round	手枪局	手枪局
+match point	赛点	赛点
+overtime	加时	加时
+map veto	地图禁用	地图禁用
+map pick	选图	选图
+bo3	三局两胜	三局两胜
+bo5	五局三胜	五局三胜
+mr12	12 回合制	12 回合制
+major	Major（CS 最高级别赛事）
+grand final	总决赛	总决赛
+upper bracket	胜者组	胜者组
+lower bracket	败者组	败者组
+group stage	小组赛	小组赛
+playoffs	淘汰赛	淘汰赛
+
+ct	反恐精英方（CT 方）	反恐精英方
+t side	恐怖分子方	恐怖分子方
+ct side	反恐精英方	反恐精英方
+bombsite	包点	包点
+a site	A 包点	A 包点
+b site	B 包点	B 包点
+mid	中路	中路
+banana	香蕉道（Inferno）	香蕉道
+long doors	长门（Dust2 的 A 长）	长门
+pit	坑位（Inferno 的坑）	坑位
+connector	连接处	连接处
+choke point	卡口	卡口
+off angle	非常规架点	非常规架点
+crossfire	交叉火力	交叉火力
+boost	人梯（垫人上去）	人梯
+ninja defuse	偷袭拆包	偷袭拆包
+rush b	快攻 B 点	快攻 B 点
+
+clutch	残局（以少打多）	残局
+ace	五杀（一个人干掉全队）	五杀
+entry	进场、突破	进场
+entry fragger	突破手	突破手
+flick	甩枪	甩枪
+spray	扫射	扫射
+one tap	一枪爆头	一枪爆头
+peek	拉枪线、探头	拉枪线
+wide swing	大身位拉出去	大身位拉出去
+shoulder peek	小身位探头	小身位探头
+jump peek	跳起来偷看（用跳跃取得视野）	跳看
+rotate	转点	转点
+retake	回防、反打	回防
+rush	快攻	快攻
+lurk	潜伏	潜伏
+lurker	潜伏位	潜伏位
+igl	场上指挥	场上指挥
+awper	狙击手	狙击手
+trade	补枪（换掉对方）	补枪
+whiff	空枪、打歪了	空枪
+prefire	预瞄	预瞄
+wallbang	穿墙射击	穿墙射击
+headshot	爆头	爆头
+hs	爆头	爆头
+noscope	盲狙	盲狙
+quickscope	快速开镜	快速开镜
+spray transfer	转移扫射	转移扫射
+bait	钓鱼、卖队友	钓鱼
+hold the angle	架住这个角度	架住这个角度
+saving his utility	留着道具	留着道具
+
+navi	CS 战队 NAVI，保留原名
+faze	CS 战队 FaZe Clan，保留原名
+g2	CS 战队 G2 Esports，保留原名
+mouz	CS 战队 MOUZ，保留原名
+astralis	CS 战队 Astralis，保留原名
+furia	CS 战队 FURIA，保留原名
+tyloo	CS 战队 TYLOO，保留原名
+virtus.pro	CS 战队 Virtus.pro，保留原名
+cloud9	CS 战队 Cloud9，保留原名
+ence	CS 战队 ENCE，保留原名
+fnatic	CS 战队 Fnatic，保留原名
+falcons	CS 战队 Falcons，保留原名
+m80	CS 战队 M80，保留原名
+the mongolz	CS 战队 The MongolZ，保留原名
+gamerlegion	CS 战队 GamerLegion，保留原名
+
+s1mple	CS 选手 s1mple，保留原名
+zywoo	CS 选手 ZywOo，保留原名
+m0nesy	CS 选手 m0NESY，保留原名
+donk	CS 选手 donk，保留原名
+ropz	CS 选手 ropz，保留原名
+niko	CS 选手 NiKo，保留原名
+cadian	CS 选手 cadiaN，保留原名
+blamef	CS 选手 blameF，保留原名
+b1t	CS 选手 b1t，保留原名
+jimpphat	CS 选手 Jimpphat，保留原名
+torzsi	CS 选手 torzsi，保留原名
+xertion	CS 选手 xertioN，保留原名
+br0ky	CS 选手 Broky，保留原名
+
+iem	IEM（英特尔极限大师赛）
+blast	BLAST 系列赛
+esl	ESL 系列赛	ESL 系列赛
+pgl	PGL 系列赛	PGL 系列赛
+katowice	IEM 卡托维兹站
+cologne	IEM 科隆站	IEM 科隆站
+esl pro league	ESL 职业联赛	ESL 职业联赛
+
+clip	精彩片段	精彩片段
+vod	录像	录像
+ranked	排位赛	排位赛
+queue	排队、开一把	排队
+meta	版本主流打法	版本主流打法
+patch	版本更新	版本更新
+buff	加强	加强
+nerf	削弱	削弱
+rng	随机性	随机性
+afk	挂机	挂机
+op	太强了	太强了
+ping	延迟	延迟
+lag	卡顿	卡顿
+hitbox	判定框	判定框
+respawn	复活	复活
+cooldown	冷却	冷却
+loadout	配装	配装
+loot	战利品	战利品
+smurf	小号炸鱼	小号炸鱼
+grief	故意捣乱	故意捣乱
+mmr	匹配分	匹配分
+dono	打赏	打赏
+sub	订阅（subscriber 的简称）	订阅
+pog	网络上表示惊叹的说法
+pogchamp	网络上表示惊叹的说法
+one hp	只剩一滴血	只剩一滴血

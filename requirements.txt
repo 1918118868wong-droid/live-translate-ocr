@@ -1,0 +1,51 @@
+# live-translate-ocr 的依赖。总量约 250MB，PySide6 占大头。
+#
+# 装法**不要**直接 pip install -r 这个文件：rapidocr 声明的依赖是带 Qt 的
+# opencv-python，那会和 PySide6 抢 Qt 插件（症状是崩溃或界面错乱，而且看不出原因）。
+# 正确顺序在 tools/bootstrap.py 里，跑 setup.bat 就行。
+# 手工装的话见文件末尾那段。
+
+# ---- 抓屏幕 ----
+# mss 走纯 GDI 调用，比 PIL.ImageGrab 快也稳，且不依赖 Qt
+mss>=10.2
+numpy>=1.24
+
+# ---- 认字：RapidOCR（中文名"超轻量 OCR"）----
+# 模型是**打包在 whl 里**的，首次运行不需要联网下载——这点很关键，
+# 代理不稳的机器照样能装起来就用。
+# 下面这一行由 bootstrap 单独用 --no-deps 装，理由见文件头。
+rapidocr>=3.9
+# 推理后端。rapidocr 自己没声明它，得我们装
+onnxruntime>=1.17
+
+# ---- 图像 ----
+# **必须是 headless 版**：带 Qt 的 opencv-python 和 PySide6 同进程会冲突。
+# 两者装的是同一个 import 名 `cv2`，所以只能有一个在场。
+opencv-python-headless>=4.8
+pillow>=10
+
+# ---- 字幕浮窗 ----
+PySide6>=6.6
+
+# ---- 全局热键（字幕窗点击穿透时也能响应）----
+keyboard>=0.13.5
+
+# ---- 记忆库的模糊匹配（已翻译过的句子近似命中）----
+rapidfuzz>=3.6
+
+# ---- LLM 调用：自己实现 OpenAI 兼容协议，不装官方 SDK ----
+httpx>=0.27
+
+# ============================================================
+# 手工安装（比如 bootstrap 跑不动了）：
+#
+#   .venv\Scripts\python.exe -m pip install mss numpy onnxruntime ^
+#       opencv-python-headless pillow PySide6 keyboard rapidfuzz httpx
+#   .venv\Scripts\python.exe -m pip install --no-deps rapidocr
+#   .venv\Scripts\python.exe -m pip install pyclipper six shapely PyYAML ^
+#       Pillow tqdm omegaconf requests colorlog
+#
+# 最后把 opencv 那两行再确认一遍（装了带 Qt 的版本就必须卸掉）：
+#   .venv\Scripts\python.exe -m pip uninstall -y opencv-python
+#   .venv\Scripts\python.exe tools\selfcheck.py
+# ============================================================

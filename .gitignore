@@ -1,0 +1,18 @@
+# 运行时产物
+.venv/
+__pycache__/
+*.py[cod]
+logs/
+
+# 翻译记忆库：是运行中攒出来的，可能含直播原话，不进仓库。
+# （.tsv/.txt 那些词典是手工整理的，要提交，别一起挡掉。）
+data/*.sqlite3
+data/*.sqlite3-wal
+data/*.sqlite3-shm
+
+# 第三方模型权重，各自的许可证管着，不转手。
+models/
+*.onnx
+
+# 个人配置（含 API Key，绝对不要提交）
+config.toml
